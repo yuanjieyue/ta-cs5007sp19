@@ -1,0 +1,9 @@
+all: program1
+
+program1: hello.c
+	gcc hello.c -o program1
+
+.PHONY: clean
+
+clean:
+	rm -f program1
