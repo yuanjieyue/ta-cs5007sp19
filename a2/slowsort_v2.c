@@ -6,7 +6,7 @@ void initialize_arr(int length, int nums[]);
 double insertion_sort(int length, int nums[]);
 void print_arr(int length, int nums[]);
 void swap(int* a, int* b);
-
+// this is the main function
 int main(void) {
 	const int TRIALS = 30, SMALL_ELE_NUM = 30, MED_ELE_NUM = 500, LARGE_ELE_NUM = 3000;
 	double small_avg, med_avg, large_avg;
