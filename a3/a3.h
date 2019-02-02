@@ -12,6 +12,7 @@ struct Name {
   char *first;
   char *middle;
   char *last;
+  int age;
 };
 
 typedef struct Name Name;
@@ -116,7 +117,7 @@ void listByName(Name *n1, Name *n2, Name *n3, char format);
 // Alyssa Antle: 	15
 // Ben Bitdiddle: 	14
 // Charlie Chucker: 6
-void listByAge(Name* names[], char format); 
+void listByAge(Name* names[], int num_of_names, char format); 
 
 
 
