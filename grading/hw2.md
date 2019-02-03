@@ -1,4 +1,4 @@
-1. congzhu, no a2 repo, which means he is late submit
+1. congzhu, 94, program miss small and med size array
 2. doanh, 100, great job
 3. evandouglass 100, great job  
 4. ffhere 95, no good makefile and not complie
@@ -7,5 +7,5 @@
 7. ginapark 100, great job 
 8. jaywhang 100, great job 
 9. mjhipp 100, great job
-10.nnemetz 100, great job
- 
+10. nnemetz 100, great job
+11. mocaa7             
