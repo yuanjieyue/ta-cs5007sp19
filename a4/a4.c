@@ -8,12 +8,13 @@
 #define PRINT_DEBUG 1
 
 // Implement the Hand and other functions in here
+// Card Functions
 Card* createCard(Suit suit, Name name) {
-	Card* card = (Card*) malloc(sizeof(Card));
-	card -> name = name;
-       	card -> suit = suit;
-	card -> value = -1;
-	return card;	
+	Card* newCard = (Card*) malloc(sizeof(Card));
+	newCard -> name = name;
+	newCard -> suit = suit;
+	newCard -> value = -1;
+	return newCard;
 }
 
 void destroyCard(Card* card) {
@@ -33,6 +34,13 @@ CardNode* createCardNode(Card* card) {
 	new_card_node -> nextCard = NULL;
 	new_card_node -> thisCard = card;
 	return new_card_node;
+}
+
+void destroyCardNode(CardNode* cardNode) {
+	cardNode -> nextCard = NULL;
+	cardNode -> prevCard = NULL;
+	cardNode -> thisCard = NULL;
+	free(cardNode);	
 }
 
 void addCardToHand(Card* card, Hand* hand) {
@@ -73,11 +81,8 @@ Card* removeCardFromHand(Card *card, Hand *hand) {
 			curr_card_node -> nextCard -> prevCard = curr_card_node -> prevCard;
 		}
 	}
-	curr_card_node -> nextCard = NULL;
-	curr_card_node -> prevCard = NULL;
-	curr_card_node -> thisCard = NULL;
 	hand -> num_cards_in_hand--;
-	free(curr_card_node);
+	destroyCardNode(curr_card_node);
 	return card;
 }
 
@@ -133,10 +138,7 @@ Deck* populateDeck() {
 	Name name = NINE;
 	for (; suit <= DIAMONDS; suit++) {
 		for (name = NINE; name <= ACE; name++) {
-			Card* new_card = (Card*) malloc(sizeof(Card));
-			new_card -> name = name;
-			new_card -> suit = suit;
-			new_card -> value = -1;
+			Card* new_card = createCard(suit, name);		
 			aDeck = pushCardToDeck(new_card, aDeck); 
 		}
 	}
